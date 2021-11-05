@@ -1,5 +1,13 @@
 #!/bin/sh
+
+## If necessary, chmod +x this file to use it.
 echo "Starting setup"
+
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until `os-setuo-setup.sh` has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 #install xcode CLI
 echo "Installing xcode CLI tools"
@@ -34,6 +42,8 @@ echo "SSH setup complete!"
 
 
 # Setting up Defaults
+
+# https://github.com/mathiasbynens/dotfiles/blob/main/.macos
 
 echo "Setting up defaults..."
 # Enable tabbing between all controls

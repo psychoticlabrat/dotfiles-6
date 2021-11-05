@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>2987616B-0AE7-4ADC-882C-E54293F6AFBB</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>lw</string>
+			<key>text</key>
+			<string>Search leagueoflegends.fandom.com for '{query}'</string>
+			<key>url</key>
+			<string>https://leagueoflegends.fandom.com/wiki/Special:Search?search={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>5630B174-B27D-48B5-A99B-65EA9E8C7225</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>辞書</string>
+			<key>text</key>
+			<string>jisho</string>
+			<key>url</key>
+			<string>https://jisho.org/search/{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>6F64FCCB-0B17-4FC9-9C39-F84E0C04013E</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>ttv</string>
+			<key>text</key>
+			<string>Search www.twitch.tv for '{query}'</string>
+			<key>url</key>
+			<string>https://www.twitch.tv/{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>ADC7241D-8E43-4DE4-AC3A-4D65A7E9914A</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>opgg</string>
+			<key>text</key>
+			<string>OP.GG NA Search</string>
+			<key>url</key>
+			<string>https://na.op.gg/summoner/userName={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>B7BF569F-2369-4ACB-BC69-7565C3447CA8</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>mdn</string>
+			<key>text</key>
+			<string>MDN Web Docs {query}</string>
+			<key>url</key>
+			<string>https://developer.mozilla.org/en-US/search?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>FDDD0D45-3B83-4FA0-84FD-801425F8B49C</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>ud</string>
+			<key>text</key>
+			<string>Search www.urbandictionary.com for '{query}'</string>
+			<key>url</key>
+			<string>https://www.urbandictionary.com/define.php?term={query}&amp;utm_source=search-action</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
