@@ -1,5 +1,7 @@
 #!/bin/sh
 
+COMPUTER_NAME="kyoko"
+
 ## If necessary, chmod +x this file to use it.
 echo "Starting setup"
 
@@ -43,6 +45,19 @@ echo "SSH setup complete!"
 
 # Setting up Defaults
 
+# Set computer name (as done via System Preferences -> Sharing)
+
+sudo scutil --set ComputerName "$COMPUTER_NAME"
+sudo scutil --set HostName "$COMPUTER_NAME"
+sudo scutil --set LocalHostName "$COMPUTER_NAME"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$COMPUTER_NAME"
+
+# time zone
+sudo systemsetup -settimezone "US/Eastern" > /dev/null
+
+# Menu bar: show battery percentage
+defaults write com.apple.menuextra.battery ShowPercent YES
+
 # https://github.com/mathiasbynens/dotfiles/blob/main/.macos
 
 echo "Setting up defaults..."
@@ -67,18 +82,33 @@ defaults write com.apple.finder AppleShowAllFiles -bool true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
-# Change default screencapture folder
-defaults write com.apple.screencapture location ~/Pictures/Screenshots
 
 # Enable tap-to-click
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# Enable 3-finger drag. (Moving with 3 fingers in any window "chrome" moves the window.)
+# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
+# defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+# defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerSwipeGesture -int 1
 
 # Always show User Library folder
 chflags nohidden ~/Library/
 # Show the /Volumes folder
 sudo chflags nohidden /Volumes
+
+
+#################################################################
+# Screen                                                        #    
+#################################################################
+
+# Change default screencapture folder
+defaults write com.apple.screencapture location ~/Pictures/Screenshots
+
+# Enable subpixel font rendering on non-Apple LCDs
+#defaults write NSGlobalDomain AppleFontSmoothing -int 2
 
 #################################################################
 # Dock Stuff                                                    #
