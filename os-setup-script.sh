@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 
 COMPUTER_NAME="kyoko"
 
@@ -25,6 +25,7 @@ else
     printf "[SYSTEM] Update Homebrew\n"
     brew update
 fi
+brew analytics off
 printf "\n"
 echo "Installing Homebrew Complete!"
 
@@ -156,5 +157,6 @@ echo "Setting up defaults complete!"
 #ln -s ./dotfiles/zshrc ~/.zshrc
 #ln -s ./dotfiles/tmux.conf ~/.tmux.conf
 
+BASE_DIR=${0:a:h}
 # clone tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
