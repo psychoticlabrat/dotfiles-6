@@ -148,3 +148,10 @@ defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 killall Dock &> /dev/null
 killall Finder &> /dev/null
 echo "Setting up defaults complete!"
+
+
+################################################################
+# Shell Setup
+################################################################
+#ln -s ./dotfiles/zshrc ~/.zshrc
+#ln -s ./dotfiles/tmux.conf ~/.tmux.conf
