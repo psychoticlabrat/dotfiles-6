@@ -155,3 +155,6 @@ echo "Setting up defaults complete!"
 ################################################################
 #ln -s ./dotfiles/zshrc ~/.zshrc
 #ln -s ./dotfiles/tmux.conf ~/.tmux.conf
+
+# clone tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
