@@ -1,8 +1,5 @@
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 autoload -U compinit; compinit
-alias ibrew='arch -x86_64 /usr/local/bin/brew'
-alias ls='lsd'
-alias alass="alass-cli"
 
 
 # case insensitive matching only if there are no case-sensitive matches
@@ -78,6 +75,11 @@ alias grs='git remote show'
 alias glo='git log --pretty="oneline"'
 alias glol='git log --graph --oneline --decorate'
 
+alias l='lsd -la'
+alias ls='lsd'
+alias la='ls -a'
+alias ll='ls -la'
+
 
 
 ### Added by Zinit's installer
@@ -106,3 +108,4 @@ zinit light zsh-users/zsh-completions
 #zinit light marlonrichert/zsh-autocomplete
 
 ### End of Zinit's installer chunk
+

@@ -1,6 +1,7 @@
-#!/usr/bin/env zsh
+#!showusr/bin/env zsh
 
 COMPUTER_NAME="kyoko"
+HOMEDIR=${0:a:h}/homedir
 
 ## If necessary, chmod +x this file to use it.
 echo "Starting setup"
@@ -36,6 +37,10 @@ brew bundle
 echo "Installing brew file complete!"
 
 #set up ssh key
+
+# Enable SSH
+sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
+
 echo "Setting up ssh..."
 ssh-keygen -t rsa -b 4096 -C daisuke@daisuke.dev
 eval "$(ssh-agent -s)"
@@ -62,6 +67,21 @@ defaults write com.apple.menuextra.battery ShowPercent YES
 # https://github.com/mathiasbynens/dotfiles/blob/main/.macos
 
 echo "Setting up defaults..."
+# Disable smart quotes
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
+# Disable autocorrect
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
+# Disable auto-capitalization
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+
+# Disable smart dashes
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+# Diable automatic period substitution
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
 # Enable tabbing between all controls
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 # Show filename extensions by default
@@ -90,10 +110,13 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-# Enable 3-finger drag. (Moving with 3 fingers in any window "chrome" moves the window.)
 # defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
 # defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
 # defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerSwipeGesture -int 1
+
+# Three-finger drag
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
 
 # Always show User Library folder
 chflags nohidden ~/Library/
@@ -146,17 +169,28 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 
 # Enable “Do Not Track”
 defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
+
+# Reveal IP address, hostname, OS version, etc. when clicking the clock
+# in the login window
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+
+# Don’t display prompt when quitting iTerm
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+
 killall Dock &> /dev/null
 killall Finder &> /dev/null
 echo "Setting up defaults complete!"
-
-
 ################################################################
 # Shell Setup
 ################################################################
 #ln -s ./dotfiles/zshrc ~/.zshrc
 #ln -s ./dotfiles/tmux.conf ~/.tmux.conf
 
-BASE_DIR=${0:a:h}
+#TODO: make this work like this: 
+# https://github.com/atomantic/dotfiles/blob/057431a015ff64481bc0582e8b8a805985f3d1f0/install.sh#L238
+
+ln -s $HOMEDIR/.zshrc $HOME/.zshrc
+ln -s $HOMEDIR/.tmux.conf $HOME/.tmux.conf
+
 # clone tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
