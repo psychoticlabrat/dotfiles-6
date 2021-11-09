@@ -63,7 +63,8 @@ endif
 
 "" Plugins
 
-call plug#begin('~/.vim/plugged')
+" call plug#begin('~/.vim/plugged')
+call plug#begin(stdpath('config') . '/plugged')
 "" tpope
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
