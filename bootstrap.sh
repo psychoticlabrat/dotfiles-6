@@ -1,4 +1,4 @@
-#!usr/bin/env zsh
+#!/bin/zsh
 
 COMPUTER_NAME="kyoko"
 #GITDIR=${0:a:h}
