@@ -26,6 +26,8 @@ function linkDotFile {
   echo "Creating new symlink: ${dest}"
   ln -s ${dotfilesDir}/${1} ${dest}
 }
+# ensures that .config exists before running so it doesn't just silently fail
+mkdir -p $HOME/.config
 linkDotFile .zshrc
 linkDotFile .zprofile 
 linkDotFile .tmux.conf
