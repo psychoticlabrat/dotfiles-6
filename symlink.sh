@@ -30,5 +30,6 @@ linkDotFile .zshrc
 linkDotFile .zprofile 
 linkDotFile .tmux.conf
 linkDotFile .zsh
+linkDotFile .config/nvim
 #linkDotFile .config # directory
 
