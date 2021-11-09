@@ -26,6 +26,9 @@ else
     printf "[SYSTEM] Update Homebrew\n"
     brew update
 fi
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 brew analytics off
 printf "\n"
 echo "Installing Homebrew Complete!"
@@ -47,7 +50,7 @@ echo "Installing fonts complete!"
 sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
 
 echo "Setting up ssh..."
-ssh-keygen -t rsa -b 4096 -C daisuke@daisuke.dev
+ssh-keygen -t rsa -b 4096 -N '' -C daisuke@daisuke.dev
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 
