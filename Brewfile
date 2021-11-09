@@ -31,7 +31,7 @@ mas "PiPer", id: 1421915518
 mas "Pixelmator Pro", id: 1289583905
 mas "PopClip", id: 445189367
 mas "Safarikai", id: 1437951175
-#mas "Silicio", id: 933627574
+mas "Silicio", id: 933627574
 mas "SmileAllDay", id: 1180442868
 mas "SpoticaMenu", id: 570549457
 mas "Tampermonkey", id: 1482490089
@@ -40,7 +40,6 @@ mas "Things", id: 904280696
 mas "Tweaks for Reddit", id: 1524828965
 mas "Vectornator", id: 1219074514
 mas "WireGuard", id: 1451685025
-mas "Xcode", id: 497799835
 mas "Yoink", id: 457622435
 
 
@@ -130,6 +129,7 @@ cask "xld"
 
 #optional
 
+#mas "Xcode", id: 497799835
 #cask "chiaki"
 #cask "epic-games"
 #cask "imazing"

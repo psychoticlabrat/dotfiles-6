@@ -1,0 +1,18 @@
+# Xcode is only optional because it takes forever to install. 
+cask_args appdir: "/Applications"
+
+mas "Xcode", id: 497799835
+cask "chiaki"
+cask "epic-games"
+cask "imazing"
+cask "historyhound"
+cask "league-of-legends"
+cask "openemu"
+brew "qmk"
+cask "qmk-toolbox"
+cask "sf-symbols"
+cask "steam"
+cask "sweet-home3d"
+cask "tor-browser"
+cask "steermouse"
+
