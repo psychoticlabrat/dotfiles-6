@@ -51,7 +51,9 @@ echo "Installing fonts complete!"
 sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
 
 echo "Setting up ssh..."
-ssh-keygen -t rsa -b 4096 -N '' -C daisuke@daisuke.dev
+#ssh-keygen -t rsa -b 4096 -N '' -C daisuke@daisuke.dev
+# This should force it to create without prompt... dangerous.
+ssh-keygen -q -t -b 4096 rsa -N '' -C daisuke@daisuke.dev -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 
