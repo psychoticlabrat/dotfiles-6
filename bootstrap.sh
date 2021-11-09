@@ -228,7 +228,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 nvim +PlugInstall +qall
 
 # iTerm 2
-mkdir -p $HOME/Library/Application Support/iTerm2/Scripts/AutoLaunch
-ln -s  ./appconfigs/iterm2/DarkMode.py $HOME/Application Support/iTerm2/Scripts/AutoLaunch
+mkdir -p $HOME/Library/Application\ Support/iTerm2/Scripts/AutoLaunch
+ln -s  ./appconfigs/iterm2/DarkMode.py $HOME/Application\ Support/iTerm2/Scripts/AutoLaunch
 
 neofetch
