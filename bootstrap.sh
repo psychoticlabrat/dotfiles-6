@@ -212,6 +212,9 @@ echo "Setting up defaults complete!"
 #ln -s ./dotfiles/zshrc ~/.zshrc
 #ln -s ./dotfiles/tmux.conf ~/.tmux.conf
 
+# Git Config
+git config --global core.excludesfile ~/.gitignore_global
+
 #TODO: make this work like this: 
 # https://github.com/atomantic/dotfiles/blob/057431a015ff64481bc0582e8b8a805985f3d1f0/install.sh#L238
 

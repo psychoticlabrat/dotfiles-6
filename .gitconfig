@@ -1,0 +1,7 @@
+[user]
+	name = Joshua Daisuke Vasquez
+	emal = daisuke@daisuke.dev
+	email = daisuke@daisuke.dev
+[core]
+	excludefiles = /Users/least/.gitignore_global
+	excludesfile = /Users/least/.gitignore_global
