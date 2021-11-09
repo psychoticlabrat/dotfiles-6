@@ -86,6 +86,11 @@ defaults write com.apple.menuextra.battery ShowPercent YES
 
 # https://github.com/mathiasbynens/dotfiles/blob/main/.macos
 
+# running "Wipe all (default) app icons from the Dock"
+# # This is only really useful when setting up a new Mac, or if you don’t use
+# # the Dock to launch apps.
+defaults write com.apple.dock persistent-apps -array ""
+
 echo "Setting up defaults..."
 # Disable smart quotes
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
@@ -194,11 +199,12 @@ defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 # in the login window
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
-# Don’t display prompt when quitting iTerm
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+#Enable the Develop menu and the Web Inspector in Safari
+defaults write com.apple.Safari IncludeDevelopMenu -bool true
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true;ok
 
-killall Dock &> /dev/null
-killall Finder &> /dev/null
+
 echo "Setting up defaults complete!"
 ################################################################
 # Shell Setup
@@ -231,4 +237,9 @@ nvim +PlugInstall +qall
 mkdir -p $HOME/Library/Application\ Support/iTerm2/Scripts/AutoLaunch
 ln -s  ./appconfigs/iterm2/DarkMode.py $HOME/Application\ Support/iTerm2/Scripts/AutoLaunch
 
+# Don’t display prompt when quitting iTerm
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 neofetch
+
+killall Dock &> /dev/null
+killall Finder &> /dev/null
