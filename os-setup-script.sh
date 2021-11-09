@@ -1,7 +1,7 @@
-#!showusr/bin/env zsh
+#!usr/bin/env zsh
 
 COMPUTER_NAME="kyoko"
-HOMEDIR=${0:a:h}/homedir
+GITDIR=${0:a:h}
 
 ## If necessary, chmod +x this file to use it.
 echo "Starting setup"
@@ -189,8 +189,10 @@ echo "Setting up defaults complete!"
 #TODO: make this work like this: 
 # https://github.com/atomantic/dotfiles/blob/057431a015ff64481bc0582e8b8a805985f3d1f0/install.sh#L238
 
-ln -s $HOMEDIR/.zshrc $HOME/.zshrc
-ln -s $HOMEDIR/.tmux.conf $HOME/.tmux.conf
+
+./symlink.sh
 
 # clone tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+source ~/.zshrc
