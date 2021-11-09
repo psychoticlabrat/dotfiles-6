@@ -205,11 +205,15 @@ source ~/.zshrc
 
 # Neovim
  
-#install plugged
+#install plugged plugin manager
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
+# open nvim, install plugins, and quit
+nvim +PlugInstall +qall
 
 # iTerm 2
 mkdir -p $HOME/Library/Application Support/iTerm2/Scripts/AutoLaunch
 ln -s  ./appconfigs/iterm2/DarkMode.py $HOME/Application Support/iTerm2/Scripts/AutoLaunch
+
+neofetch
