@@ -24,9 +24,11 @@ if ! command -v brew > /dev/null; then
     ruby -e "$(curl --location --fail --silent --show-error https://raw.githubusercontent.com/Homebrew/install/master/install)"\
         </dev/null
 else
-    printf "[SYSTEM] Update Homebrew\n"
+    printf "Update Homebrew\n"
     brew update
 fi
+
+# source so it knows how to deal with brew
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -53,9 +55,16 @@ sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
 echo "Setting up ssh..."
 #ssh-keygen -t rsa -b 4096 -N '' -C daisuke@daisuke.dev
 # This should force it to create without prompt... dangerous.
-ssh-keygen -q -t -b 4096 rsa -N '' -C daisuke@daisuke.dev -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa
+
+if [ -f ~/.ssh/id_rsa ]; then
+    echo "ssh key already generated."
+else
+    echo "generating key"
+    ssh-keygen -q -t -b 4096 rsa -N '' -C daisuke@daisuke.dev -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_rsa
+fi
+
 
 echo "SSH setup complete!"
 
