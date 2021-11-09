@@ -21,7 +21,8 @@ echo "Installing xcode CLI tools complete!"
 #install homebrew
 if ! command -v brew > /dev/null; then
     printf "Installing Homebrew\n"
-    ruby -e "$(curl --location --fail --silent --show-error https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    ruby -e "$(curl --location --fail --silent --show-error https://raw.githubusercontent.com/Homebrew/install/master/install)"\
+        </dev/null
 else
     printf "[SYSTEM] Update Homebrew\n"
     brew update
