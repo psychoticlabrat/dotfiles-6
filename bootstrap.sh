@@ -36,6 +36,11 @@ brew bundle
 
 echo "Installing brew file complete!"
 
+# Set up Fonts
+echo "Installing fonts..."
+cp -r ./fonts /Library/Fonts
+echo "Installing fonts complete!"
+
 #set up ssh key
 
 # Enable SSH
