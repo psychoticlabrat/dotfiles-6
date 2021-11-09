@@ -1,7 +1,7 @@
 #!usr/bin/env zsh
 
 COMPUTER_NAME="kyoko"
-GITDIR=${0:a:h}
+#GITDIR=${0:a:h}
 
 ## If necessary, chmod +x this file to use it.
 echo "Starting setup"
