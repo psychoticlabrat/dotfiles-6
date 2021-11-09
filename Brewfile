@@ -100,7 +100,6 @@ brew "zsh"
 cask "anki"
 cask "appcleaner"
 cask "bettertouchtool"
-cask "chiaki"
 cask "contexts"
 cask "disk-inventory-x"
 cask "firefox"
@@ -131,6 +130,7 @@ cask "xld"
 
 #optional
 
+#cask "chiaki"
 #cask "epic-games"
 #cask "imazing"
 #cask "historyhound"

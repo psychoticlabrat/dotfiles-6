@@ -31,5 +31,7 @@ linkDotFile .zprofile
 linkDotFile .tmux.conf
 linkDotFile .zsh
 linkDotFile .config/nvim
+linkDotFile .hammerspoon
+
 #linkDotFile .config # directory
 

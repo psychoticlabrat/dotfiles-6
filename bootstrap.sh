@@ -32,7 +32,7 @@ echo "Installing Homebrew Complete!"
 
 #install Brewfile
 echo "Installing brew file..."
-brew bundle
+brew bundle --file=./Brewfile
 
 echo "Installing brew file complete!"
 
@@ -209,3 +209,7 @@ source ~/.zshrc
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
+
+# iTerm 2
+mkdir -p $HOME/Library/Application Support/iTerm2/Scripts/AutoLaunch
+ln -s  ./appconfigs/iterm2/DarkMode.py $HOME/Application Support/iTerm2/Scripts/AutoLaunch
