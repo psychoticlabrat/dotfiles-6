@@ -13,10 +13,25 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 #install xcode CLI
-echo "Installing xcode CLI tools"
-xcode-select --install
+# This is kind of pointless since git doesn't work without installing the xcode CLI tools so commented out for now.
+# echo "Installing xcode CLI tools"
+# xcode-select --install
 
-echo "Installing xcode CLI tools complete!"
+xcode-select --install > /dev/null 2>&1
+if [ 0 == $? ]; then
+    sleep 1
+    osascript <<EOD
+tell application "System Events"
+    tell process "Install Command Line Developer Tools"
+        keystroke return
+        click button "Agree" of window "License Agreement"
+    end tell
+end tell
+EOD
+else
+    echo "Command Line Developer Tools are already installed!"
+fi
+# echo "Installing xcode CLI tools complete!"
 
 #install homebrew
 if ! command -v brew > /dev/null; then
@@ -235,7 +250,8 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # open nvim, install plugins, and quit
-nvim +PlugInstall +qall
+nvim +PlugInstall +qall > /dev/null 2>&1
+#vim +PlugInstall +qall > /dev/null 2>&1
 
 # iTerm 2
 mkdir -p $HOME/Library/Application\ Support/iTerm2/Scripts/AutoLaunch
