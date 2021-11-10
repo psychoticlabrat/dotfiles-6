@@ -17,20 +17,20 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # echo "Installing xcode CLI tools"
 # xcode-select --install
 
-xcode-select --install > /dev/null 2>&1
-if [ 0 == $? ]; then
-    sleep 1
-    osascript <<EOD
-tell application "System Events"
-    tell process "Install Command Line Developer Tools"
-        keystroke return
-        click button "Agree" of window "License Agreement"
-    end tell
-end tell
-EOD
-else
-    echo "Command Line Developer Tools are already installed!"
-fi
+# xcode-select --install > /dev/null 2>&1
+# if [ 0 == $? ]; then
+#     sleep 1
+#     osascript <<EOD
+# tell application "System Events"
+#     tell process "Install Command Line Developer Tools"
+#         keystroke return
+#         click button "Agree" of window "License Agreement"
+#     end tell
+# end tell
+# EOD
+# else
+#     echo "Command Line Developer Tools are already installed!"
+# fi
 # echo "Installing xcode CLI tools complete!"
 
 #install homebrew
@@ -238,7 +238,8 @@ echo "Setting up defaults complete!"
 ./symlink.sh
 
 # clone tmux plugin manager
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# handle this with submodule instead
+# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 source ~/.zshrc
 

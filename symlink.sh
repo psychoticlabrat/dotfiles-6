@@ -36,6 +36,7 @@ linkDotFile .config/nvim
 linkDotFile .hammerspoon
 linkDotFile .gitignore_global
 linkDotFile .gitconfig
+linkDotFile .tmux
 
 #linkDotFile .config # directory
 
