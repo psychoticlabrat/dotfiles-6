@@ -95,6 +95,7 @@ brew "util-linux"
 brew "vim"
 brew "wget"
 brew "zsh"
+brew "zsh-autosuggestions"
 
 cask "anki"
 cask "appcleaner"

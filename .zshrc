@@ -80,10 +80,12 @@ alias ls='lsd'
 alias la='ls -a'
 alias ll='ls -la'
 
-ZPLUGINDIR=$HOME/.zsh/plugins
+# ZPLUGINDIR=$HOME/.zsh/plugins
 
-if [[ ! -d $ZPLUGINDIR/zsh-autosuggestions ]]; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions $ZPLUGINDIR/zsh-autosuggestions
-fi
+# if [[ ! -d $ZPLUGINDIR/zsh-autosuggestions ]]; then
+#   git clone https://github.com/zsh-users/zsh-autosuggestions $ZPLUGINDIR/zsh-autosuggestions
+# fi
 
-source $ZPLUGINDIR/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+# source $ZPLUGINDIR/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+#
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
