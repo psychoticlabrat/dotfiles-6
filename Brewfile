@@ -8,7 +8,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "qmk/qmk"
+#tap "qmk/qmk"
 
 brew "mas"
 
@@ -96,6 +96,7 @@ brew "vim"
 brew "wget"
 brew "zsh"
 brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
 
 cask "anki"
 cask "appcleaner"

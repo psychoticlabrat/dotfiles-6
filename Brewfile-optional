@@ -1,5 +1,6 @@
 # Xcode is only optional because it takes forever to install. 
 cask_args appdir: "/Applications"
+tap "qmk/qmk"
 
 mas "Xcode", id: 497799835
 cask "chiaki"
