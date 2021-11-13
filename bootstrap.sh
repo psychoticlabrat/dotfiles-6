@@ -57,6 +57,7 @@ brew bundle --file=./Brewfile
 
 echo "Installing brew file complete!"
 
+
 # Set up Fonts
 echo "Installing fonts..."
 cp -r ./fonts /Library/Fonts
@@ -241,7 +242,10 @@ echo "Setting up defaults complete!"
 # handle this with submodule instead
 # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+(brew --prefix)/opt/fzf/install
+
 source ~/.zshrc
+
 
 
 # Neovim
