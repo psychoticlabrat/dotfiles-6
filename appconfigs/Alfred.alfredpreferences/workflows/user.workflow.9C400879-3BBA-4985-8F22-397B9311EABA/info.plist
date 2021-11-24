@@ -3,31 +3,29 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>macos-shortcuts-alfred.lukas-diekmann.de</string>
+	<string>com.gilbarbara.mdn-search</string>
 	<key>connections</key>
 	<dict>
-		<key>E8B4AE7C-74DD-44D8-A49F-46903618D0CE</key>
+		<key>B8068536-AE17-4368-AB7E-9AB402E79AAB</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>89622087-1E5E-418B-B4C3-24565FCD0936</string>
+				<string>B880FB3B-9AAA-48ED-A646-05935287E399</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
-				<key>vitoclose</key>
-				<false/>
 			</dict>
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string>Lukas Diekmann</string>
+	<string>Gil Barbara</string>
 	<key>description</key>
-	<string></string>
+	<string>Search MDN</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>macOS Shortcuts</string>
+	<string>MDN Search</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -38,95 +36,80 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./runShortcut.sh $@</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
+				<string>open {query}</string>
 				<key>type</key>
-				<integer>5</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>89622087-1E5E-418B-B4C3-24565FCD0936</string>
+			<string>B880FB3B-9AAA-48ED-A646-05935287E399</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
-				<true/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
-				<integer>100</integer>
+				<integer>62</integer>
 				<key>keyword</key>
-				<string>sc</string>
+				<string>mdn</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
-				<true/>
+				<false/>
 				<key>queuedelaymode</key>
 				<integer>0</integer>
 				<key>queuemode</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>runningsubtext</key>
-				<string></string>
+				<string>Searching...</string>
 				<key>script</key>
-				<string>./listShortcuts.sh</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>listShortcuts.php</string>
+				<string>php -f search.php -- "{query}"</string>
 				<key>subtext</key>
-				<string>Run shortcuts</string>
+				<string>ex: mdn addEventListener</string>
 				<key>title</key>
-				<string>Shortcuts</string>
+				<string>mdn {search}</string>
 				<key>type</key>
-				<integer>5</integer>
+				<integer>0</integer>
 				<key>withspace</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>E8B4AE7C-74DD-44D8-A49F-46903618D0CE</string>
+			<string>B8068536-AE17-4368-AB7E-9AB402E79AAB</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>0</integer>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>Search MDN, the learning platform for Web technologies and the software that powers the Web, including:
+
+- Web standards such as CSS, HTML, and JavaScript
+- Open Web app development
+- Firefox add-on development
+
+https://developer.mozilla.org/
+	</string>
 	<key>uidata</key>
 	<dict>
-		<key>89622087-1E5E-418B-B4C3-24565FCD0936</key>
+		<key>B8068536-AE17-4368-AB7E-9AB402E79AAB</key>
 		<dict>
-			<key>xpos</key>
-			<integer>270</integer>
 			<key>ypos</key>
-			<integer>215</integer>
+			<real>10</real>
 		</dict>
-		<key>E8B4AE7C-74DD-44D8-A49F-46903618D0CE</key>
+		<key>B880FB3B-9AAA-48ED-A646-05935287E399</key>
 		<dict>
-			<key>xpos</key>
-			<integer>65</integer>
 			<key>ypos</key>
-			<integer>215</integer>
+			<real>10</real>
 		</dict>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>0.3.1</string>
+	<string>1.2.1</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/gilbarbara/alfred-workflows/tree/master/mdn-search</string>
 </dict>
 </plist>

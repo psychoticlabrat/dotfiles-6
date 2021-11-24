@@ -242,6 +242,8 @@ echo "Setting up defaults complete!"
 # handle this with submodule instead
 # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+
+# install the zsh stuff for fzf
 (brew --prefix)/opt/fzf/install
 
 source ~/.zshrc
