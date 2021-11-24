@@ -1,4 +1,6 @@
 require('console').init()
+spaces = require("hs._asm.undocumented.spaces")
+
 
 -- for simpler binding of keys, define the modifiers ahead of time. 
 local hyper = {"cmd","alt","ctrl","shift"}
