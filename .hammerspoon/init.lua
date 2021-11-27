@@ -52,6 +52,10 @@ hs.hotkey.bind(hyper, "r", hs.toggleConsole)
 
 -- Window Management
 -- Specific applications
+hs.hotkey.bind(hyper, "a", function()
+	hs.application.launchOrFocusByBundleID("com.apple.ActivityMonitor")
+	-- hs.application.launchOrFocusByBundleID("com.Discord_U")
+end)
 hs.hotkey.bind(hyper, "d", function()
 	hs.application.launchOrFocusByBundleID("com.hnc.DiscordCanary")
 	-- hs.application.launchOrFocusByBundleID("com.Discord_U")
