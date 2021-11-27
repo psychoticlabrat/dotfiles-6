@@ -1,6 +1,8 @@
 require('console').init()
-spaces = require("hs._asm.undocumented.spaces")
+wm = require('wm')
 
+--local modules =  {wm}
+-- wm.start()
 
 -- for simpler binding of keys, define the modifiers ahead of time. 
 local hyper = {"cmd","alt","ctrl","shift"}
@@ -51,7 +53,7 @@ hs.hotkey.bind(hyper, "r", hs.toggleConsole)
 -- Window Management
 -- Specific applications
 hs.hotkey.bind(hyper, "d", function()
-	hs.application.launchOrFocusByBundleID("com.hnc.Discord")
+	hs.application.launchOrFocusByBundleID("com.hnc.DiscordCanary")
 	-- hs.application.launchOrFocusByBundleID("com.Discord_U")
 end)
 hs.hotkey.bind(hyper, "t", function()
