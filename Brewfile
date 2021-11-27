@@ -20,6 +20,7 @@ mas "Compressor", id: 424390742
 mas "Dark Reader for Safari", id: 1438243180
 mas "Disk Speed Test", id: 425264550
 #mas "EasyRes", id: 688211836
+mas "Equinox - Create Wallpaper", id: 1591510203
 mas "Final Cut Pro", id: 424389933
 mas "Furiganify!", id: 1151320968
 mas "Hush", id: 1544743900
