@@ -1,3 +1,10 @@
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 autoload -U compinit; compinit
 
@@ -79,7 +86,6 @@ alias l='lsd -la'
 alias ls='lsd'
 alias la='ls -a'
 alias ll='ls -la'
-
 # ZPLUGINDIR=$HOME/.zsh/plugins
 
 # if [[ ! -d $ZPLUGINDIR/zsh-autosuggestions ]]; then

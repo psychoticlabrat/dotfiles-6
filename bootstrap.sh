@@ -43,7 +43,7 @@ else
     brew update
 fi
 
-# source so it knows how to deal with brew
+## source so it knows how to deal with brew
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -236,7 +236,7 @@ echo "Setting up defaults complete!"
 # https://github.com/atomantic/dotfiles/blob/057431a015ff64481bc0582e8b8a805985f3d1f0/install.sh#L238
 
 
-./symlink.sh
+#./symlink.sh
 
 # clone tmux plugin manager
 # handle this with submodule instead
@@ -244,7 +244,7 @@ echo "Setting up defaults complete!"
 
 
 # install the zsh stuff for fzf
-(brew --prefix)/opt/fzf/install
+#(brew --prefix)/opt/fzf/install
 
 source ~/.zshrc
 

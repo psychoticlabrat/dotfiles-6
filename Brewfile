@@ -43,7 +43,8 @@ mas "Vectornator", id: 1219074514
 mas "WireGuard", id: 1451685025
 mas "Yoink", id: 457622435
 
-
+brew "1password"
+brew "karabiner-elements"
 brew "aria2"
 brew "autoconf"
 brew "python"

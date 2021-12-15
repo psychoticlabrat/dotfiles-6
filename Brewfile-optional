@@ -3,6 +3,7 @@ cask_args appdir: "/Applications"
 tap "qmk/qmk"
 
 mas "Xcode", id: 497799835
+cask "1password"
 cask "chiaki"
 cask "epic-games"
 cask "imazing"
