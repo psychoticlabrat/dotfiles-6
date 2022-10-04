@@ -1,3 +1,5 @@
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
 require('least.plugins')
 require('least.base')
 require('least.highlights')

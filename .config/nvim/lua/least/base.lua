@@ -6,7 +6,7 @@ vim.wo.number = true
 vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.hlsearch = true
-vim.cmd [[set mouse=a]]
+vim.opt.mouse ="a"
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.tabstop = 4
@@ -34,6 +34,7 @@ vim.opt.wrap = true--no wrap lines
 vim.opt.backspace = 'start,eol,indent'
 vim.opt.path:append {'**'} -- finding files - search down into the subfolders 
 vim.opt.wildignore:append { '*/node_modules/*'}
+vim.opt.wildignorecase = true
 
 -- Undercurl... not working iterm? 
 vim.cmd([[let &t_Cs = "\e[4:3"]])
